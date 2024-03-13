@@ -8,4 +8,4 @@ All the materials available in the repository are available under the Creative C
 
 * **Lab 0**: Using types to capture semantic meaning, properties and structs and efficiency, extension methods;  
 * **Lab 1**: (Cancelled. Watch video recording of Pavel's lab instead.)
-* **Lab 2**: Conversions and casts, generic and extension methods, overload resolution, combining interfaces via generics
+* **Lab 2**: Conversions and casts, generic & extension methods, overloading, combining interfaces via generics

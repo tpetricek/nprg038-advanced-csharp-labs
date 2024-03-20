@@ -39,39 +39,13 @@ public static class Units {
 #endregion
 #region Homework #1 - Fancy unit system
 
-
-/*
-  ADD SOMETHING LIKE...
-
-  public static Number<T> operator *(Number<T> a, int b) => 
-		new Number<T> { value = a.value + b };
-	public static Number<T> operator +(Number<T> a, Number<T> b) => 
-		new Number<T> { value = a.value + b.value };
-	public static Number<MeterPerSecond> operator /(Number<T> a, Number<SecondUnit> b) => 
-		new Number<MeterPerSecond> { value = a.value / b.value };
-*/
-
 public static class FancyUnitExtensions {
 }
 
 public static class FancyUnits {
-  public static void Run() {
-			/*
-			
-			var dist = 1.5.FancyMeters() + 2.FancyMeters();
-			Console.WriteLine("Distance: " + dist.value);
-
-			var time = 3.FancySeconds();
-			var speed = dist / time;
-			Console.WriteLine("Speed: " + speed.value);
-
-			speed *= 2;
-			Console.WriteLine("Doubled speed: " + speed.value);
-			*/
-
-			// Should not compile
-			// speed *= dist;
-			// distance += time;
+  public static void Run() {			
+		// var dist = 1.5.FancyMeters() + 2.FancyMeters();
+		// Console.WriteLine("Distance: " + dist.value);
   }
 }
 

@@ -4,6 +4,10 @@ Panels.Run();
 
 #region Homework #1 - Basic unit system
 
+// This is the simple straightforward and probably the best solution
+// We define structs for each of the unit and some operators
+// Some of the operators have to be copied, but it is simple
+
 public struct MeterPerSecond {
   internal double value;
 	public static MeterPerSecond operator *(MeterPerSecond a, int b) => 
@@ -45,7 +49,36 @@ public static class Units {
 }
 
 #endregion
+#region Homework #1 - Abstract base class 
+
+// Could we extract some of the shared functionality using a base class?
+// This is tricky, because the + operator cannot return value of the 
+// base class, but has to return a value of the actual inheriting type.
+// We can do this with a trick, which is to make it generic and make
+// the inherited class itself the generic parameter.
+
+public abstract class UnitNumber<T> where T:UnitNumber<T>, new() {
+  internal double value; 
+	public static T operator +(UnitNumber<T> a, UnitNumber<T> b) 
+		=> new T { value = a.value + b.value };
+}
+
+public class CleverMeter : UnitNumber<CleverMeter> {
+}
+
+public static class CleverUnitExtensions {
+	public static CleverMeter CleverMeters<T>(this T value) where T : IConvertible
+		=> new CleverMeter { value = value.ToDouble(null) };
+}
+
+#endregion
 #region Homework #1 - Fancy unit system
+
+// Yet another option is to define "phantom types" for the differnet units
+// and then keep them as the generic type parameters. This also lets us
+// reuse some of the operators - but note that we cannot define "/" in 
+// the correct way (the one below is not right!) - we would have to turn
+// this into an extension method instead.
 
 public class MeterUnit { }
 public class SecondUnit { }

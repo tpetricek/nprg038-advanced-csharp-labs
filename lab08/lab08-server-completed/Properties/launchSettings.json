@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "lab08-server-completed": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:64434;http://localhost:64435"
+    }
+  }
+}

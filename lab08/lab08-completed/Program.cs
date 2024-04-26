@@ -8,7 +8,8 @@ using System.Text.RegularExpressions;
 // HttpDemos.RandomWalk("/wiki/Charles_University");
 // RestDemos.Run();
 // DeserializationDemos.Run();
-RefitDemos.Run();
+// RefitDemos.Run();
+ReflectionDemos.Run();
 
 #region Web requests and crawling demo
 
@@ -108,4 +109,14 @@ public static class RefitDemos {
   }
 }
 
+#endregion
+#region Creating object instances via Reflection
+
+public static class ReflectionDemos {
+  public static void Run() {
+    var rndType = typeof(System.Random);
+    object rndObj = Activator.CreateInstance(rndType)!;
+    Console.WriteLine(((System.Random)rndObj).Next());
+  }
+}
 #endregion
